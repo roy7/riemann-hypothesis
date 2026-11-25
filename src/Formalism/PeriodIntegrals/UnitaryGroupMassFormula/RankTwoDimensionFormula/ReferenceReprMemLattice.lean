@@ -52,8 +52,6 @@ namespace PI.UnitaryDimensionFormula.NormCutK
 
 section Dual
 
-attribute [local instance] Formalism.BasicNotions.Host.cmStar
-
 variable {D : D7} (X : Formalism.L2.SG.HidaSetting.HidaSetting D)
 
 def repr0 (v : VA X.B.I) : VA X.B.I :=

@@ -229,25 +229,6 @@ theorem nlo_entries {N : ℕ} {g : GL (Fin N) k} (hg : g ∈ PositivityTheory.Lb
   · have := h2 i (zeroOne N i) (zeroOne N i)
     rwa [_root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq, Matrix.one_apply_eq] at this
 
-theorem mem_Nup_of' {N : ℕ} (g : GL (Fin N) k)
-    (h0 : ∀ i j : Fin N, j < i → (g : Matrix (Fin N) (Fin N) k) i j = 0)
-    (h1 : ∀ i, (g : Matrix (Fin N) (Fin N) k) i i = 1) : g ∈ PositivityTheory.Lbc.Nup k N := by
-  refine mem_unipRad.2 ⟨mem_parab_iff.2 fun a b i j hab => ?_, fun a i j => ?_⟩
-  · rw [_root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq, _root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq]
-    exact h0 a b hab
-  · have hij : i = j := Fin.ext (by have := i.2; have := j.2; simp only [PositivityTheory.Lbc.ones] at *; omega)
-    subst hij
-    rw [_root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq, h1, Matrix.one_apply_eq]
-
-theorem mem_Nlo_of' {N : ℕ} (g : GL (Fin N) k)
-    (h0 : ∀ i j : Fin N, i < j → (g : Matrix (Fin N) (Fin N) k) i j = 0)
-    (h1 : ∀ i, (g : Matrix (Fin N) (Fin N) k) i i = 1) : g ∈ PositivityTheory.Lbc.Nlo k N := by
-  refine (mem_unipRadLower k).2 ⟨(mem_parabLower_iff k).2 fun a b i j hab => ?_, fun a i j => ?_⟩
-  · rw [_root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq, _root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq]
-    exact h0 a b hab
-  · have hij : i = j := Fin.ext (by have := i.2; have := j.2; simp only [PositivityTheory.Lbc.ones] at *; omega)
-    subst hij
-    rw [_root_.GlobalTheory.CompanionTheory.LbElem.TorComm.stdBlocks_ones_eq, h1, Matrix.one_apply_eq]
 
 end Entries
 
@@ -274,7 +255,7 @@ theorem thL_mem_iwGL (w : Pl E) (hw : ¬ IsSplitAt w) (n : ℕ) {g : GLw n w} (h
 theorem thL_mem_Nup (w : Pl E) (hw : ¬ IsSplitAt w) (n : ℕ) {g : GLw n w}
     (hg : g ∈ PositivityTheory.Lbc.Nup (w.adicCompletion E) n) : thL n w g ∈ PositivityTheory.Lbc.Nup (w.adicCompletion E) n := by
   obtain ⟨h0, h1⟩ := nup_entries (inv_mem hg)
-  refine mem_Nup_of' _ (fun i j hij => ?_) (fun i => ?_)
+  refine GlobalTheory.CompanionTheory.LbElem.IwahoriLDU.mem_Nup_of _ (fun i j hij => ?_) (fun i => ?_)
   · show (thL n w g).val i j = 0
     rw [thL_apply w hw, h0 _ _ (Fin.rev_lt_rev.2 hij), map_zero, mul_zero]
   · show (thL n w g).val i i = 1
@@ -283,7 +264,7 @@ theorem thL_mem_Nup (w : Pl E) (hw : ¬ IsSplitAt w) (n : ℕ) {g : GLw n w}
 theorem thL_mem_Nlo (w : Pl E) (hw : ¬ IsSplitAt w) (n : ℕ) {g : GLw n w}
     (hg : g ∈ PositivityTheory.Lbc.Nlo (w.adicCompletion E) n) : thL n w g ∈ PositivityTheory.Lbc.Nlo (w.adicCompletion E) n := by
   obtain ⟨h0, h1⟩ := nlo_entries (inv_mem hg)
-  refine mem_Nlo_of' _ (fun i j hij => ?_) (fun i => ?_)
+  refine GlobalTheory.CompanionTheory.LbElem.IwahoriLDU.mem_Nlo_of _ (fun i j hij => ?_) (fun i => ?_)
   · show (thL n w g).val i j = 0
     rw [thL_apply w hw, h0 _ _ (Fin.rev_lt_rev.2 hij), map_zero, mul_zero]
   · show (thL n w g).val i i = 1
@@ -500,9 +481,6 @@ open scoped Classical
 
 attribute [local instance] GlobalTheory.LocalData.complRel GlobalTheory.LocalData.isLocalField
 
-namespace PositivityTheory.Rg.Bc.ArchbcB.B.M4
-
-end PositivityTheory.Rg.Bc.ArchbcB.B.M4
 end -- clump:auto
 end -- clump:auto
 end -- clump:auto

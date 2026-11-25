@@ -279,7 +279,7 @@ theorem compDeg_le (hP : Proport U) (Z : Comp Xo c) {u : Weight Dw} (hu : ∀ τ
   rcases (compDeg U Z (wtOf Dw u 0)).eq_zero_or_pos with h0 | h0
   · rw [h0, Nat.cast_zero]; exact topDeg_nonneg Z hu
   · have := finiteDimensional_cuspOn hP Z hu
-    have h1 := _root_.GlobalTheory.ConeDeg.degree_growth_integral.1 c.F _ _ _ _ 1 le_rfl _ ((imageDeg_pos_iff _ _).1 h0)
+    have h1 := _root_.GlobalTheory.ConeDeg.degree_growth.1 c.F _ _ _ _ 1 le_rfl _ ((imageDeg_pos_iff _ _).1 h0)
     have h2 := growth_hilb_le hP Z hu le_rfl
     rw [h1, Nat.cast_one, Nat.cast_one, one_pow, one_pow, one_mul, one_mul, ← ENNReal.ofReal_natCast] at h2
     exact (ENNReal.ofReal_le_ofReal_iff (topDeg_nonneg Z hu)).1 h2

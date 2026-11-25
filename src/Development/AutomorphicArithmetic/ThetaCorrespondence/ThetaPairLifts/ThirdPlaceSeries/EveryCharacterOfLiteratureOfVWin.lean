@@ -961,8 +961,6 @@ theorem UpperTheory.LiteratureTheorems.join_out_of_literature : GlobalTheory.Mem
   GlobalTheory.JoinFun.joinOut_of_five (_root_.UpperTheory.LiteratureTheorems.ellipticMainTheoremCM') (_root_.UpperTheory.LiteratureTheorems.hilbertClassFieldJ') (_root_.UpperTheory.LiteratureTheorems.siegel_klingen_deligne_ribet_of_literature) (_root_.UpperTheory.LiteratureTheorems.partial_zeta_functional_equation_of_literature) (_root_.UpperTheory.LiteratureTheorems.heckeTateFunctionalEquation')
 theorem UpperTheory.LiteratureTheorems.ht_card_of_literature : GlobalTheory.HeightCounting.HtCard :=
   (GlobalTheory.HtCardProof.htCard )
-theorem UpperTheory.LiteratureTheorems.ab_mul_n_st_of_literature : GlobalTheory.Published.AbMulNSt :=
-  GlobalTheory.abMulN_holds
 theorem UpperTheory.LiteratureTheorems.abelian_de_rham_of_literature : GlobalTheory.Published.AbelianDeRham :=
   PositivityTheory.DualRT.abelianDeRham
 theorem UpperTheory.LiteratureTheorems.de_rham_pot_semistable_of_literature : GlobalTheory.Published.DeRhamPotSemistable :=
@@ -1116,14 +1114,10 @@ theorem UpperTheory.LiteratureTheorems.grothendieck_deformation_of_literature : 
   GlobalTheory.Published.grothendieckDeformation_of_lifting (_root_.UpperTheory.LiteratureTheorems.abelian_de_rham_of_literature) (_root_.UpperTheory.LiteratureTheorems.abelian_lifting_of_literature)
 theorem UpperTheory.LiteratureTheorems.grothendieck_messing_of_literature : GlobalTheory.Published.GrothendieckMessing :=
   GlobalTheory.Published.GrothendieckDeformation.grothendieckMessing (_root_.UpperTheory.LiteratureTheorems.grothendieck_deformation_of_literature)
-theorem UpperTheory.LiteratureTheorems.principal_polarisation_one_section_of_literature : GlobalTheory.Published.principalPolarisationOneSection :=
-  GlobalTheory.AbLaw.principalPolarisation_unique_section
 theorem UpperTheory.LiteratureTheorems.harish_chandra_finite_of_literature : GlobalTheory.Published.HarishChandraFinite :=
   PositivityTheory.RgHf.harishChandraFinite
 theorem UpperTheory.LiteratureTheorems.harish_chandra_modules_of_literature : GlobalTheory.Published.HarishChandraModules :=
   PositivityTheory.Stage1.PM.harishChandraModules
-theorem UpperTheory.LiteratureTheorems.hasse_norm_st_of_literature : GlobalTheory.Published.HasseNormSt :=
-  GlobalTheory.QNorm.hasseNormSt
 theorem UpperTheory.LiteratureTheorems.hecke_l_adic_character_of_literature : GlobalTheory.Published.HeckeLAdicCharacter :=
   PositivityTheory.Stage1.PM.heckeLAdicCharacter
 theorem UpperTheory.LiteratureTheorems.hecke_l_adic_character_crystalline_of_literature : GlobalTheory.Published.HeckeLAdicCharacterCrystalline :=
@@ -1140,16 +1134,12 @@ theorem UpperTheory.LiteratureTheorems.hermitian_hasse_principle_of_literature :
   PositivityTheory.Stage1.PM.hermitianHassePrinciple
 theorem UpperTheory.LiteratureTheorems.howe_duality_real_of_literature : GlobalTheory.Published.HoweDualityReal :=
   GlobalTheory.howeDualityReal_holds
-theorem UpperTheory.LiteratureTheorems.induced_simple_lowest_alcove_of_literature : GlobalTheory.Published.InducedSimpleLowestAlcove :=
-  GlobalTheory.Alc.inducedSimpleLowestAlcove
 theorem UpperTheory.LiteratureTheorems.jacquet_shalika_of_literature : GlobalTheory.Published.JacquetShalika :=
   PositivityTheory.AdelicQuotientData.jacquetShalika
 theorem UpperTheory.LiteratureTheorems.k_finite_vectors_unitary_of_literature : GlobalTheory.Published.KFiniteVectorsUnitary :=
   _root_.GlobalTheory.CompanionTheory.Published.kFiniteVectors_irreducibleUnitary_unitaryGroupPQ
 theorem UpperTheory.LiteratureTheorems.kawamata_viehweg_of_literature : GlobalTheory.Published.KawamataViehweg :=
   GlobalTheory.KVFromPair.kawamataViehweg_of_nadelVanishingPair (GlobalTheory.nefNumerics_outright) (And.left (NadelVanishingSeparation.NSI.nadelVanishingAndNonKltDivisor))
-theorem UpperTheory.LiteratureTheorems.landherr_st_of_literature : GlobalTheory.Published.LandherrSt :=
-  (GlobalTheory.QNorm.landherr_and_landherrSt).2
 theorem UpperTheory.LiteratureTheorems.linnik_of_literature : GlobalTheory.Published.Linnik :=
   UpperTheory.Lit.linnik
 theorem UpperTheory.LiteratureTheorems.cuspidal_multiplicity_one_of_literature : GlobalTheory.Published.CuspidalMultiplicityOne :=
@@ -1188,8 +1178,6 @@ theorem UpperTheory.LiteratureTheorems.semi_abelian_hom_extension_of_literature 
   GlobalTheory.semiAbelianHomExtension_holds
 theorem UpperTheory.LiteratureTheorems.semi_abelian_lie_seminegative_of_literature : GlobalTheory.Published.SemiAbelianLieSeminegative :=
   GlobalTheory.Nef.semiAbelianLieSeminegative
-theorem UpperTheory.LiteratureTheorems.semistable_reduction_st_of_literature : GlobalTheory.Published.SemistableReductionSt :=
-  GlobalTheory.SS.semistableReductionSt
 theorem UpperTheory.LiteratureTheorems.siegel_eisenstein_simple_pole : GlobalTheory.Published.UnusedSlot72 :=
   trivial
 theorem UpperTheory.LiteratureTheorems.siegel_set_unitary_of_literature : GlobalTheory.Published.SiegelSetUnitary :=
@@ -1456,16 +1444,8 @@ theorem UpperTheory.LiteratureTheorems.published_results_arithmetic : GlobalTheo
     p4 := (_root_.UpperTheory.LiteratureTheorems.ar_calc_of_literature),
     p5 := (_root_.UpperTheory.LiteratureTheorems.abelian_de_rham_of_literature),
     p8 := (_root_.UpperTheory.LiteratureTheorems.ray_class_field_st_of_literature),
-    p12 := (_root_.UpperTheory.LiteratureTheorems.semistable_reduction_st_of_literature),
-    p13 := (_root_.UpperTheory.LiteratureTheorems.strong_approx_su_of_literature),
-    p14 := (_root_.UpperTheory.LiteratureTheorems.green_series_st_of_literature),
     p16 := (_root_.UpperTheory.LiteratureTheorems.good_chern_weil_of_literature),
-    p19 := (_root_.UpperTheory.LiteratureTheorems.landherr_st_of_literature),
-    p20 := (_root_.UpperTheory.LiteratureTheorems.hasse_norm_st_of_literature),
     p22 := (_root_.UpperTheory.LiteratureTheorems.semi_abelian_hom_extension_of_literature),
-    p23 := (_root_.UpperTheory.LiteratureTheorems.induced_simple_lowest_alcove_of_literature),
-    p25 := (_root_.UpperTheory.LiteratureTheorems.principal_polarisation_one_section_of_literature),
-    p26 := (_root_.UpperTheory.LiteratureTheorems.ab_mul_n_st_of_literature),
     q1 := (_root_.UpperTheory.LiteratureTheorems.grothendieck_messing_of_literature),
     q4 := (_root_.UpperTheory.LiteratureTheorems.prismatic_dieudonne_hodge_of_literature),
     q6 := (_root_.UpperTheory.LiteratureTheorems.kawamata_viehweg_of_literature),
